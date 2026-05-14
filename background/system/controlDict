@@ -29,9 +29,9 @@ startFrom       latestTime;
 startTime       0.0;
 
 stopAt          endTime;
-endTime         3;
+endTime         0.6;
 
-deltaT          1e-5;
+deltaT          1e-6;
 
 writeControl    adjustable;
 writeInterval   0.02;
@@ -54,90 +54,90 @@ maxDeltaT       1e-4;
 
 functions
 {
-    gateForces
-    {
-        type            forces;
-        libs            (forces);
+    // gateForces
+    // {
+    //     type            forces;
+    //     libs            (forces);
 
-        patches
-        (
-            gateBottom
-            gateUpstream
-            gateDownstream
-            gateTop
-        );
+    //     patches
+    //     (
+    //         gateBottom
+    //         gateUpstream
+    //         gateDownstream
+    //         gateTop
+    //     );
 
-        rho             rhoInf;
-        rhoInf          1000;
+    //     rho             rhoInf;
+    //     rhoInf          1000;
 
-        CofR            (1.22 0.205 0.005);
+    //     CofR            (1.22 0.205 0.005);
 
-        writeControl    timeStep;
-        writeInterval   200;
-    }
+    //     writeControl    timeStep;
+    //     writeInterval   200;
+    // }
 
-    gateUpstreamPressureAverage
-    {
-        type            surfaceFieldValue;
-        libs            (fieldFunctionObjects);
+    // gateUpstreamPressureAverage
+    // {
+    //     type            surfaceFieldValue;
+    //     libs            (fieldFunctionObjects);
 
-        regionType      patch;
-        name            gateUpstream;
+    //     regionType      patch;
+    //     name            gateUpstream;
 
-        operation       areaAverage;
+    //     operation       areaAverage;
 
-        fields
-        (
-            p_rgh
-        );
+    //     fields
+    //     (
+    //         p_rgh
+    //     );
 
-        writeFields     false;
+    //     writeFields     false;
 
-        writeControl    timeStep;
-        writeInterval   200;
-    }
+    //     writeControl    timeStep;
+    //     writeInterval   200;
+    // }
 
-    gateUpstreamPressureMax
-    {
-        type            surfaceFieldValue;
-        libs            (fieldFunctionObjects);
+    // gateUpstreamPressureMax
+    // {
+    //     type            surfaceFieldValue;
+    //     libs            (fieldFunctionObjects);
 
-        regionType      patch;
-        name            gateUpstream;
+    //     regionType      patch;
+    //     name            gateUpstream;
 
-        operation       max;
+    //     operation       max;
 
-        fields
-        (
-            p_rgh
-        );
+    //     fields
+    //     (
+    //         p_rgh
+    //     );
 
-        writeFields     false;
+    //     writeFields     false;
 
-        writeControl    timeStep;
-        writeInterval   200;
-    }
+    //     writeControl    timeStep;
+    //     writeInterval   200;
+    // }
 
-    gateUpstreamPressureMin
-    {
-        type            surfaceFieldValue;
-        libs            (fieldFunctionObjects);
+    // gateUpstreamPressureMin
+    // {
+    //     type            surfaceFieldValue;
+    //     libs            (fieldFunctionObjects);
 
-        regionType      patch;
-        name            gateUpstream;
+    //     regionType      patch;
+    //     name            gateUpstream;
 
-        operation       min;
+    //     operation       min;
 
-        fields
-        (
-            p_rgh
-        );
+    //     fields
+    //     (
+    //         p_rgh
+    //     );
 
-        writeFields     false;
+    //     writeFields     false;
 
-        writeControl    timeStep;
-        writeInterval   200;
-    }
+    //     writeControl    timeStep;
+    //     writeInterval   200;
+    // }
 }
 
 // ************************************************************************* //
