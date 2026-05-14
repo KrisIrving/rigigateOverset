@@ -22,35 +22,67 @@ boundaryField
 {
     oversetPatch
     {
-        type            overset;
+        type overset;
+        value uniform 0;
     }
 
-    stationaryWalls
+    leftWall
     {
-        type            fixedFluxPressure;
+        type fixedFluxPressure;
+        value uniform 0;
+    }
+
+    bottomWall
+    {
+        type fixedFluxPressure;
+        value uniform 0;
+    }
+
+    outlet
+    {
+        type totalPressure;
+        p0 uniform 0;
     }
 
     atmosphere
     {
-        type            totalPressure;
-        p0              uniform 0;
-        U               U;
-        phi             phi;
-        rho             rho;
-        psi             none;
-        gamma           1;
-        value           uniform 0;
+        type totalPressure;
+        p0 uniform 0;
     }
 
-    floatingObject
+    gateBottom
     {
-        type            fixedFluxPressure;
+        type fixedFluxPressure;
+        value uniform 0;
+    }
+
+    gateUpstream
+    {
+        type fixedFluxPressure;
+        value uniform 0;
+    }
+
+    gateDownstream
+    {
+        type fixedFluxPressure;
+        value uniform 0;
+    }
+
+    gateTop
+    {
+        type fixedFluxPressure;
+        value uniform 0;
     }
 
     overset
     {
-        patchType       overset;
-        type            fixedFluxPressure;
+        type overset;
+        value uniform 0;
+    }
+
+    frontAndBack
+    {
+        type empty;
     }
 }
 

@@ -18,19 +18,66 @@ scale   1;
 
 vertices
 (
-    (0.2 0.2 0.1)
-    (0.8 0.2 0.1)
-    (0.8 0.8 0.1)
-    (0.2 0.8 0.1)
-    (0.2 0.2 0.8)
-    (0.8 0.2 0.8)
-    (0.8 0.8 0.8)
-    (0.2 0.8 0.8)
+    // z = 0
+    (1.04 0.001 0)   // 0
+    (1.20 0.001 0)   // 1
+    (1.24 0.001 0)   // 2
+    (1.42 0.001 0)   // 3
+
+    (1.04 0.005 0)   // 4
+    (1.20 0.005 0)   // 5
+    (1.24 0.005 0)   // 6
+    (1.42 0.005 0)   // 7
+
+    (1.04 0.405 0)   // 8
+    (1.20 0.405 0)   // 9
+    (1.24 0.405 0)   // 10
+    (1.42 0.405 0)   // 11
+
+    (1.04 0.620 0)   // 12
+    (1.20 0.620 0)   // 13
+    (1.24 0.620 0)   // 14
+    (1.42 0.620 0)   // 15
+
+    // z = 0.01
+    (1.04 0.001 0.01)   // 16
+    (1.20 0.001 0.01)   // 17
+    (1.24 0.001 0.01)   // 18
+    (1.42 0.001 0.01)   // 19
+
+    (1.04 0.005 0.01)   // 20
+    (1.20 0.005 0.01)   // 21
+    (1.24 0.005 0.01)   // 22
+    (1.42 0.005 0.01)   // 23
+
+    (1.04 0.405 0.01)   // 24
+    (1.20 0.405 0.01)   // 25
+    (1.24 0.405 0.01)   // 26
+    (1.42 0.405 0.01)   // 27
+
+    (1.04 0.620 0.01)   // 28
+    (1.20 0.620 0.01)   // 29
+    (1.24 0.620 0.01)   // 30
+    (1.42 0.620 0.01)   // 31
 );
 
 blocks
 (
-    hex (0 1 2 3 4 5 6 7) (40 40 45) simpleGrading (1 1 1)
+    // Bottom strip, split into left / under-gate / right parts
+    hex (0 1 5 4 16 17 21 20)       (36 8 1)    simpleGrading (1 1 1)
+    hex (1 2 6 5 17 18 22 21)       (10 8 1)    simpleGrading (1 1 1)
+    hex (2 3 7 6 18 19 23 22)       (40 8 1)    simpleGrading (1 1 1)
+
+    // Left side of gate
+    hex (4 5 9 8 20 21 25 24)       (36 100 1)  simpleGrading (1 1 1)
+
+    // Right side of gate
+    hex (6 7 11 10 22 23 27 26)     (40 100 1)  simpleGrading (1 1 1)
+
+    // Top strip, split into left / above-gate / right parts
+    hex (8 9 13 12 24 25 29 28)     (36 50 1)   simpleGrading (1 1 1)
+    hex (9 10 14 13 25 26 30 29)    (10 50 1)   simpleGrading (1 1 1)
+    hex (10 11 15 14 26 27 31 30)   (40 50 1)   simpleGrading (1 1 1)
 );
 
 edges
@@ -39,25 +86,115 @@ edges
 
 boundary
 (
-    sides
+    overset
     {
         type overset;
         faces
         (
-            (0 3 2 1)
-            (2 6 5 1)
-            (1 5 4 0)
-            (3 7 6 2)
-            (0 4 7 3)
-            (4 5 6 7)
+            // outer bottom, split into 3 faces
+            (0 16 17 1)
+            (1 17 18 2)
+            (2 18 19 3)
+
+            // outer left, split into 3 faces
+            (0 4 20 16)
+            (4 8 24 20)
+            (8 12 28 24)
+
+            // outer right, split into 3 faces
+            (3 19 23 7)
+            (7 23 27 11)
+            (11 27 31 15)
+
+            // outer top, split into 3 faces
+            (12 13 29 28)
+            (13 14 30 29)
+            (14 15 31 30)
         );
     }
-    floatingObject
+
+    gateBottom
     {
         type wall;
-        faces ();
+        faces
+        (
+            // bottom of gate
+            (5 6 22 21)
+        );
+    }
+
+    gateUpstream
+    {
+        type wall;
+        faces
+        (
+            // upstream face, water side
+            (5 21 25 9)
+        );
+    }
+
+    gateDownstream
+    {
+        type wall;
+        faces
+        (
+            // downstream face
+            (6 10 26 22)
+        );
+    }
+
+    gateTop
+    {
+        type wall;
+        faces
+        (
+            // top of gate
+            (9 25 26 10)
+        );
+    }
+
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            // z = 0 faces
+
+            // bottom strip
+            (0 4 5 1)
+            (1 5 6 2)
+            (2 6 7 3)
+
+            // left and right side of gate
+            (4 8 9 5)
+            (6 10 11 7)
+
+            // top strip
+            (8 12 13 9)
+            (9 13 14 10)
+            (10 14 15 11)
+
+            // z = 0.01 faces
+
+            // bottom strip
+            (16 17 21 20)
+            (17 18 22 21)
+            (18 19 23 22)
+
+            // left and right side of gate
+            (20 21 25 24)
+            (22 23 27 26)
+
+            // top strip
+            (24 25 29 28)
+            (25 26 30 29)
+            (26 27 31 30)
+        );
     }
 );
 
+mergePatchPairs
+(
+);
 
 // ************************************************************************* //

@@ -3,16 +3,19 @@ cd "${0%/*}" || exit                                # Run from this directory
 . ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
 #------------------------------------------------------------------------------
 
+rm -rf 0
+cp -r 0.orig 0
+
 # Create background mesh
 runApplication blockMesh
 
 # Add the cylinder mesh
-runApplication mergeMeshes . ../floatingBody -overwrite
+runApplication mergeMeshes . ../gate -overwrite
 
 # Select cellSets for the different zones
 runApplication topoSet
 
-restore0Dir
+# restore0Dir
 
 # Use cellSets to write zoneID
 runApplication setFields

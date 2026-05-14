@@ -20,26 +20,68 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    #includeEtc "caseDicts/setConstraintTypes"
-
-    stationaryWalls
+    oversetPatch
     {
-        type            fixedValue;
-        value           uniform (0 0 0);
+        type overset;
+        value uniform (0 0 0);
+    }
+
+    leftWall
+    {
+        type noSlip;
+    }
+
+    bottomWall
+    {
+        type noSlip;
+    }
+
+    outlet
+    {
+        type pressureInletOutletVelocity;
+        value uniform (0 0 0);
     }
 
     atmosphere
     {
-        type            pressureInletOutletVelocity;
-        value           uniform (0 0 0);
+        type pressureInletOutletVelocity;
+        value uniform (0 0 0);
     }
 
-    floatingObject
+    gateBottom
     {
-        type            movingWallVelocity;
-        value           uniform (0 0 0);
+        type movingWallVelocity;
+        value uniform (0 0 0);
+    }
+
+    gateUpstream
+    {
+        type movingWallVelocity;
+        value uniform (0 0 0);
+    }
+
+    gateDownstream
+    {
+        type movingWallVelocity;
+        value uniform (0 0 0);
+    }
+
+    gateTop
+    {
+        type movingWallVelocity;
+        value uniform (0 0 0);
+    }
+
+    overset
+    {
+        type overset;
+        value uniform (0 0 0);
+    }
+
+    frontAndBack
+    {
+        type empty;
     }
 }
-
 
 // ************************************************************************* //

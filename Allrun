@@ -5,6 +5,16 @@ cd "${0%/*}" || exit                                # Run from this directory
 
 ./Allrun.pre
 
-(cd background && runApplication $(getApplication))
+# (cd background && runApplication $(getApplication))
+
+cd background || exit 1
+
+runApplication decomposePar
+
+runApplication mpirun -np 48 overInterDyMFoam -parallel | tee log.overInterDyMFoam.parallel
+
+runApplication reconstructPar
+
+rm -rf processor*
 
 #------------------------------------------------------------------------------

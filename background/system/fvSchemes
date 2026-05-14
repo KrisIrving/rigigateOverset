@@ -55,8 +55,8 @@ snGradSchemes
 oversetInterpolation
 {
     method              inverseDistance;
-    holeLayers          6;
-    useLayer            3;
+    holeLayers          1;
+    useLayer            1;
 }
 
 oversetInterpolationSuppressed
@@ -73,5 +73,9 @@ fluxRequired
     alpha.water;
 }
 
+wallDist
+{
+    method          meshWave;
+}
 
 // ************************************************************************* //

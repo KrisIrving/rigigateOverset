@@ -21,7 +21,7 @@ actions
         type    cellSet;
         action  new;
         source  regionToCell;
-        insidePoints ((0.1 0.1 0.1));
+        insidePoints ((0.10 0.10 0.005));
     }
 
     {
@@ -37,7 +37,14 @@ actions
         type    cellSet;
         action  invert;
     }
-);
 
+    {
+        name    c1;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        set     c1;
+    }
+);
 
 // ************************************************************************* //

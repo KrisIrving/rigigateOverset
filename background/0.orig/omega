@@ -10,74 +10,76 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volScalarField;
-    object      nut;
+    object      omega;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 2 -1 0 0 0 0];
+dimensions      [0 0 -1 0 0 0 0];
 
-internalField   uniform 0;
+internalField   uniform 10;
 
 boundaryField
 {
     oversetPatch
     {
         type overset;
-        value uniform 0;
+        value uniform 10;
     }
 
     leftWall
     {
-        type nutkWallFunction;
-        value uniform 0;
+        type omegaWallFunction;
+        value uniform 10;
     }
 
     bottomWall
     {
-        type nutkWallFunction;
-        value uniform 0;
+        type omegaWallFunction;
+        value uniform 10;
     }
 
     outlet
     {
-        type calculated;
-        value uniform 0;
+        type inletOutlet;
+        inletValue uniform 10;
+        value uniform 10;
     }
 
     atmosphere
     {
-        type calculated;
-        value uniform 0;
+        type inletOutlet;
+        inletValue uniform 10;
+        value uniform 10;
     }
 
     gateBottom
     {
-        type nutkWallFunction;
-        value uniform 0;
+        type omegaWallFunction;
+        value uniform 10;
     }
 
     gateUpstream
     {
-        type nutkWallFunction;
-        value uniform 0;
+        type omegaWallFunction;
+        value uniform 10;
     }
 
     gateDownstream
     {
-        type nutkWallFunction;
-        value uniform 0;
+        type omegaWallFunction;
+        value uniform 10;
     }
 
     gateTop
     {
-        type nutkWallFunction;
-        value uniform 0;
+        type omegaWallFunction;
+        value uniform 10;
     }
 
     overset
     {
         type overset;
-        value uniform 0;
+        value uniform 10;
     }
 
     frontAndBack

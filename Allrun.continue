@@ -3,10 +3,16 @@ cd "${0%/*}" || exit                                # Run from this directory
 . ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
 #------------------------------------------------------------------------------
 
-canCompile || exit 0    # Dynamic code
+# (cd background && runApplication $(getApplication))
 
-runApplication blockMesh
+cd background || exit 1
 
-runApplication $(getApplication)
+runApplication decomposePar
+
+runApplication mpirun -np 48 overInterDyMFoam -parallel | tee log.overInterDyMFoam.parallel
+
+runApplication reconstructPar
+
+rm -rf processor*
 
 #------------------------------------------------------------------------------

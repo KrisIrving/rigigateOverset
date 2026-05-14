@@ -4,7 +4,7 @@ cd "${0%/*}" || exit                                # Run from this directory
 #------------------------------------------------------------------------------
 
 # Mesh floating body
-(cd floatingBody && ./Allrun.pre)
+(cd gate && ./Allrun.pre)
 
 # Add background mesh
 (cd background  && ./Allrun.pre)

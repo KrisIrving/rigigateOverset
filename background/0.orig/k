@@ -16,31 +16,76 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform 0.1;
+internalField   uniform 1e-4;
 
 boundaryField
 {
-    #includeEtc "caseDicts/setConstraintTypes"
-
-    stationaryWalls
+    oversetPatch
     {
-        type            kqRWallFunction;
-        value           uniform 0.1;
+        type overset;
+        value uniform 1e-4;
+    }
+
+    leftWall
+    {
+        type kqRWallFunction;
+        value uniform 1e-4;
+    }
+
+    bottomWall
+    {
+        type kqRWallFunction;
+        value uniform 1e-4;
+    }
+
+    outlet
+    {
+        type inletOutlet;
+        inletValue uniform 1e-4;
+        value uniform 1e-4;
     }
 
     atmosphere
     {
-        type            inletOutlet;
-        inletValue      uniform 0.1;
-        value           uniform 0.1;
+        type inletOutlet;
+        inletValue uniform 1e-4;
+        value uniform 1e-4;
     }
 
-    floatingObject
+    gateBottom
     {
-        type            kqRWallFunction;
-        value           uniform 0.1;
+        type kqRWallFunction;
+        value uniform 1e-4;
+    }
+
+    gateUpstream
+    {
+        type kqRWallFunction;
+        value uniform 1e-4;
+    }
+
+    gateDownstream
+    {
+        type kqRWallFunction;
+        value uniform 1e-4;
+    }
+
+    gateTop
+    {
+        type kqRWallFunction;
+        value uniform 1e-4;
+    }
+
+    overset
+    {
+        type overset;
+        value uniform 1e-4;
+    }
+
+    frontAndBack
+    {
+        type empty;
     }
 }
-
 
 // ************************************************************************* //

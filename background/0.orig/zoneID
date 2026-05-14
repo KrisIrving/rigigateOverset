@@ -16,25 +16,65 @@ FoamFile
 
 dimensions      [0 0 0 0 0 0 0];
 
-internalField   uniform 0;
+internalField   uniform 123;
 
 boundaryField
 {
-    #includeEtc "caseDicts/setConstraintTypes"
-
-    stationaryWalls
+    oversetPatch
     {
-        type            zeroGradient;
+        type overset;
+        value uniform 0;
+    }
+
+    leftWall
+    {
+        type zeroGradient;
+    }
+
+    bottomWall
+    {
+        type zeroGradient;
+    }
+
+    outlet
+    {
+        type zeroGradient;
     }
 
     atmosphere
     {
-        type            zeroGradient;
+        type zeroGradient;
+    }
+    
+    gateBottom
+    {
+        type zeroGradient;
     }
 
-    floatingObject
+    gateUpstream
     {
-        type            zeroGradient;
+        type zeroGradient;
+    }
+
+    gateDownstream
+    {
+        type zeroGradient;
+    }
+
+    gateTop
+    {
+        type zeroGradient;
+    }
+
+    overset
+    {
+        type overset;
+        value uniform 1;
+    }
+
+    frontAndBack
+    {
+        type empty;
     }
 }
 
