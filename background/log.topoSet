@@ -1,0 +1,50 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2512                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _87ed40d256-20251219 OPENFOAM=2512 version=v2512
+Arch   : "LSB;label=32;scalar=64"
+Exec   : topoSet
+Date   : May 18 2026
+Time   : 20:57:25
+Host   : kris-INTEL-C621-X722
+PID    : 421005
+I/O    : uncollated
+Case   : /media/kris/one/Homework/gateRigid/rigigateOverset/background
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+memory pool : not available
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet c0
+    Applying source regionToCell
+    Adding all cells of connected region containing points 1((0.1 0.1 0.005)) ...
+    Found location (0.1 0.1 0.005) in cell 15396 on processor 0 in global region 0 out of 2 regions.
+    cellSet c0 now size 42700
+Created cellSet c1
+    Applying source cellToCell
+    Adding all elements of cell sets: (c0)
+    cellSet c1 now size 42700
+Read set cellSet c1 size:42700
+    Inverting cellSet
+    cellSet c1 now size 6088
+Created cellZoneSet c1
+    Applying source setToCellZone
+    Adding all cells from cell set: c1 ...
+    cellZoneSet c1 now size 6088
+
+End
+

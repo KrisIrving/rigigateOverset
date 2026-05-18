@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<!-- patch='gateTop' time='0' index='0' -->
+<VTKFile type='PolyData' version='0.1' byte_order='LittleEndian' header_type='UInt64'>
+  <PolyData>
+    <FieldData>
+      <DataArray type='Float32' Name='TimeValue' NumberOfTuples='1' format='binary'>
+BAAAAAAAAAAAAAAA      </DataArray>
+    </FieldData>
+    <Piece NumberOfPoints='34' NumberOfPolys='16'>
+      <Points>
+        <DataArray type='Float32' Name='Points' NumberOfComponents='3' format='binary'>
+mAEAAAAAAACamZk/hevRPgAAAACF65k/hevRPgAAAACF65k/hevRPgrXIzyamZk/hevRPgrXIzxxPZo/hevRPgAAAABxPZo/hevRPgrXIzxcj5o/hevRPgAAAABcj5o/hevRPgrXIzxI4Zo/hevRPgAAAABI4Zo/hevRPgrXIzwzM5s/hevRPgAAAAAzM5s/hevRPgrXIzwfhZs/hevRPgAAAAAfhZs/hevRPgrXIzwK15s/hevRPgAAAAAK15s/hevRPgrXIzz2KJw/hevRPgAAAAD2KJw/hevRPgrXIzzhepw/hevRPgAAAADhepw/hevRPgrXIzzNzJw/hevRPgAAAADNzJw/hevRPgrXIzy4Hp0/hevRPgAAAAC4Hp0/hevRPgrXIzykcJ0/hevRPgAAAACkcJ0/hevRPgrXIzyPwp0/hevRPgAAAACPwp0/hevRPgrXIzx7FJ4/hevRPgAAAAB7FJ4/hevRPgrXIzxmZp4/hevRPgAAAABmZp4/hevRPgrXIzxSuJ4/hevRPgAAAABSuJ4/hevRPgrXIzw=
+        </DataArray>
+      </Points>
+      <Polys>
+        <DataArray type='Int32' Name='connectivity' format='binary'>
+AAEAAAAAAAAAAAAAAQAAAAIAAAADAAAAAQAAAAQAAAAFAAAAAgAAAAQAAAAGAAAABwAAAAUAAAAGAAAACAAAAAkAAAAHAAAACAAAAAoAAAALAAAACQAAAAoAAAAMAAAADQAAAAsAAAAMAAAADgAAAA8AAAANAAAADgAAABAAAAARAAAADwAAABAAAAASAAAAEwAAABEAAAASAAAAFAAAABUAAAATAAAAFAAAABYAAAAXAAAAFQAAABYAAAAYAAAAGQAAABcAAAAYAAAAGgAAABsAAAAZAAAAGgAAABwAAAAdAAAAGwAAABwAAAAeAAAAHwAAAB0AAAAeAAAAIAAAACEAAAAfAAAA        </DataArray>
+        <DataArray type='Int32' Name='offsets' format='binary'>
+QAAAAAAAAAAEAAAACAAAAAwAAAAQAAAAFAAAABgAAAAcAAAAIAAAACQAAAAoAAAALAAAADAAAAA0AAAAOAAAADwAAABAAAAA        </DataArray>
+      </Polys>
+      <CellData>
+        <DataArray type='Float32' Name='alpha.water' format='binary'>
+QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA        </DataArray>
+        <DataArray type='Float32' Name='zoneID' format='binary'>
+QAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/        </DataArray>
+      </CellData>
+      <PointData>
+        <DataArray type='Float32' Name='alpha.water' format='binary'>
+iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA        </DataArray>
+        <DataArray type='Float32' Name='zoneID' format='binary'>
+iAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/        </DataArray>
+      </PointData>
+    </Piece>
+  </PolyData>
+</VTKFile>

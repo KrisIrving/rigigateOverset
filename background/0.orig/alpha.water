@@ -21,11 +21,6 @@ internalField   uniform 0;
 
 boundaryField
 {
-    oversetPatch
-    {
-        type overset;
-        value uniform 0;
-    }
 
     leftWall
     {
@@ -71,7 +66,7 @@ boundaryField
         type zeroGradient;
     }
 
-    overset
+    gateOverset
     {
         type overset;
         value uniform 0;

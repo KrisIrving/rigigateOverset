@@ -1,0 +1,47 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2512                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _87ed40d256-20251219 OPENFOAM=2512 version=v2512
+Arch   : "LSB;label=32;scalar=64"
+Exec   : setFields
+Date   : May 18 2026
+Time   : 20:59:00
+Host   : kris-INTEL-C621-X722
+PID    : 421107
+I/O    : uncollated
+Case   : /media/kris/one/Homework/gateRigid/rigigateOverset/background
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+memory pool : not available
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading setFieldsDict
+
+Setting volume field default values
+    - set internal values of volScalarField: alpha.water = 0
+    - set internal values of volScalarField: zoneID = 123
+
+Setting field region values
+
+    Adding cells with centre within boxes 1((0 0 -0.001) (1.2 0.4 0.011))
+    Selected 14956/48788 cells
+    - set internal values of volScalarField: alpha.water = 1
+    Adding all elements of cell sets: (c0)
+    Selected 42700/48788 cells
+    - set internal values of volScalarField: zoneID = 0
+    Adding all elements of cell sets: (c1)
+    Selected 6088/48788 cells
+    - set internal values of volScalarField: zoneID = 1
+
+End
+
