@@ -20,6 +20,11 @@ internalField   uniform 0;
 
 boundaryField
 {
+    gateOverset
+    {
+        type overset;
+        value uniform 0;
+    }
 
     leftWall
     {
@@ -69,11 +74,6 @@ boundaryField
         value uniform 0;
     }
 
-    gateOverset
-    {
-        type overset;
-        value uniform 0;
-    }
 
     frontAndBack
     {

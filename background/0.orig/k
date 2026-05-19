@@ -20,7 +20,12 @@ internalField   uniform 1e-4;
 
 boundaryField
 {
-
+    gateOverset
+    {
+        type overset;
+        value uniform 1e-4;
+    }
+    
     leftWall
     {
         type kqRWallFunction;
@@ -71,11 +76,7 @@ boundaryField
         value uniform 1e-4;
     }
 
-    gateOverset
-    {
-        type overset;
-        value uniform 1e-4;
-    }
+
 
     frontAndBack
     {
