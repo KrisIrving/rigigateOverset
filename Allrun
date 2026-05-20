@@ -11,7 +11,7 @@ cd background || exit 1
 
 runApplication decomposePar
 
-runApplication mpirun -np 48 overInterDyMFoam -parallel | tee log.overInterDyMFoam.parallel
+runApplication mpirun -np 48 overInterDyMFoam -parallel
 
 runApplication reconstructPar
 
